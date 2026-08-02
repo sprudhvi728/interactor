@@ -38,7 +38,7 @@ candidate list (CSV)                    Interactor
 
 ---
 
-## Requirements
+## requirements
 
 - Python 3.10+
 - Internet connection (UniProt REST API, ColabFold MSA server, and — for the default `fold` backend — Google Colab)
