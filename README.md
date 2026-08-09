@@ -10,32 +10,32 @@ fetch-sequences  →  prep-msa  →  fold  →  rank
 
 ## workflow
 
-```
-candidate list (CSV)                    Interactor
-+ bait gene/UniProt ID                        │
-        │                                     │
-        ▼                                     │
-  fetch-sequences ──── UniProt REST ───► sequences/*.fasta + manifest.csv
-        │
-        ▼
-   prep-msa ──── ColabFold MSA server ───► msa/{bait}_{candidate}.a3m
-        │        (api.colabfold.com, MMseqs2, no GPU)
-        ▼
-     fold
-        │
-        ├── --backend colab (default) ──► zip for the official ColabFold
-        │                                  batch notebook (free Colab GPU,
-        │                                  manual upload/download step)
-        │
-        └── --backend local ────────────► colabfold_batch (JAX, needs a
-                                            local CUDA GPU)
-        │
-        ▼
-  fold_results/*_scores_rank_001*.json  (ipTM, pTM, pLDDT per candidate)
-        │
-        ▼
-      rank ──► ranked_report.csv
-               tiers: High-confidence (ipTM ≥ 0.8) / Ambiguous (0.6–0.8) / Unlikely (< 0.6)
+candidate list (CSV or pasted)              interactor
+   + bait  (gene name / UniProt ID)                 │
+           │                                        │
+           ▼                                        │
+   fetch-sequences ──── UniProt REST ───► work/sequences/*.fasta + manifest.json
+           │
+           ▼
+   prep-msa ───────────────────────────► work/queries/{candidate}.fasta
+           │   (paired bait:candidate, ":"-joined; no GPU —
+           │    the MSA is fetched by colabfold_batch at fold time)
+           ▼
+   fold
+           │
+           ├── default ────────────────► work/fold_job.zip
+           │                              (upload to the free ColabFold notebook,
+           │                               Colab GPU, manual download step)
+           │
+           └── --local ────────────────► colabfold_batch (JAX, needs a
+                                           local CUDA GPU)
+           │
+           ▼
+   work/predictions/*_scores_rank_001*.json   (ipTM, pTM per candidate)
+           │
+           ▼
+   rank ──► work/ranked_report.csv
+            tiers: High-confidence (ipTM ≥ 0.8) / Ambiguous (0.6–0.8) / Unlikely (< 0.6)
 ```
 
 ---
