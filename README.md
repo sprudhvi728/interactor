@@ -10,7 +10,8 @@ fetch-sequences  →  prep-msa  →  fold  →  rank
 
 ## workflow
 
-candidate list (CSV or pasted)              interactor
+```text
+   candidate list (CSV or pasted)              interactor
    + bait  (gene name / UniProt ID)                 │
            │                                        │
            ▼                                        │
