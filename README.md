@@ -1,4 +1,6 @@
 # interactor
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/USERNAME/interactor/blob/main/notebooks/interactor_triage.ipynb)
+
 structural screening of proximity-labeling candidate interactors. it is a command-line pipeline with four stages, each a separate subcommand, chained by files on disk so any stage can be rerun independently:
 
 ```
