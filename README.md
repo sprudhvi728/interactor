@@ -44,6 +44,19 @@ fetch-sequences  →  prep-msa  →  fold  →  rank
 ## requirements
 
 - Python 3.10+
-- Internet connection (UniProt REST API, ColabFold MSA server, and — for the default `fold` backend — Google Colab)
+- Internet connection (UniProt REST API, ColabFold MSA server)
+
+## installation
+The core pipeline uses only the Python standard library (Python 3.8+), so there
+is nothing to install to run `fetch-sequences`, `prep-msa`, and `rank`:
+
+```bash
+git clone <your-repo-url>
+cd interactor-triage
+chmod +x run.sh
+```
+
+
+
 
 
