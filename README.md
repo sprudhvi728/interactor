@@ -48,16 +48,31 @@ fetch-sequences  →  prep-msa  →  fold  →  rank
 
 ## installation
 The core pipeline uses only the Python standard library (Python 3.8+), so there
-is nothing to install to run `fetch-sequences`, `prep-msa`, and `rank`:
+is nothing to install to run `fetch-sequences`, `prep-msa`, and `rank`.
 
-```bash
-git clone <your-repo-url>
-cd interactor-triage
-chmod +x run.sh
-```
+Everything runs in the browser on a free Colab GPU. You never touch a terminal.
 
-The GPU-bound `fold` stage is delegated to ColabFold. Install it only if you want
-to fold locally (`./run.sh fold --local`): `pip install "colabfold[alphafold]"`.
+1. Click **[Open in Colab](https://colab.research.google.com/github/USERNAME/interactor/blob/main/notebooks/interactor_triage.ipynb)** (or go to
+   [colab.research.google.com](https://colab.research.google.com) → **File → Upload
+   notebook** → choose `notebooks/interactor_triage.ipynb`).
+2. Turn on the GPU: **Runtime → Change runtime type → T4 GPU → Save**.
+3. In the first cell (**Inputs**), set your bait and paste your candidate list —
+   gene names or UniProt IDs, one per line:
+   ```python
+   BAIT = "CD70"
+   CANDIDATES = """
+   CD27
+   TRAF2
+   TRAF3
+   """
+   ```
+4. **Runtime → Run all.** The cells install ColabFold, fetch sequences, fold each
+   bait:candidate pair, and rank the results.
+5. When it finishes it prints a tiered table and downloads **`ranked_report.csv`**.
+
+> **Start small.** Folding takes a few minutes per pair and free Colab disconnects
+> after a few hours. Try 3–5 candidates first to confirm it works, then scale up
+> (Colab Pro or a local GPU for a large list).
 
 
 
