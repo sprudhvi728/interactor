@@ -56,6 +56,11 @@ cd interactor-triage
 chmod +x run.sh
 ```
 
+The GPU-bound `fold` stage is delegated to ColabFold. Install it only if you want
+to fold locally (`./run.sh fold --local`): `pip install "colabfold[alphafold]"`.
+
+
+
 
 
 
