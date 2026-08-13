@@ -67,10 +67,10 @@ Everything runs in the browser on a free Colab GPU. You never touch a terminal.
    """
    ```
 4. **Runtime → Run all.** The cells install ColabFold, fetch sequences, fold each
-   bait:candidate pair, and rank the results.
-5. When it finishes it prints a tiered table and downloads **`ranked_report.csv`**.
+   bait: candidate pair, and rank the results.
+5. When it finishes, it prints a tiered table and downloads **`ranked_report.csv`**.
 
-> **Start small.** Folding takes a few minutes per pair and free Colab disconnects
+> **NOTE** Test just a few protein candidates at a time. Folding takes a few minutes per pair, and free Colab disconnects
 > after a few hours. Try 3–5 candidates first to confirm it works, then scale up
 > (Colab Pro or a local GPU for a large list).
 
