@@ -7,6 +7,8 @@ structural screening of proximity-labeling candidate interactors. it is a comman
 fetch-sequences  →  prep-msa  →  fold  →  rank
 ```
 ---
+## overview
+Merging proximity labeling with mass spectrometry-based proteomics enables the mapping of protein-protein interactions (PPIs) and local protein neighborhoods within their native cellular context.
 
 ## workflow
 
