@@ -82,8 +82,16 @@ Everything runs in the browser on a free Colab GPU. You never touch a terminal.
 > after a few hours. Consider using Colab Pro or a local GPU for a large list.
 
 ## limitations
- This tool assumes an already finalized list; therefore, it does not provide statistical filtering of raw spectral counts. It does not provide proof of interaction. For example, high ipTM scores indicate plausibility but not evidence of presence in cells. Not a replacement for experimental validation.
+ This tool assumes an already finalized list; therefore, it does not statistically filter raw spectral counts. It does not provide proof of interaction. For example, high ipTM scores indicate plausibility but not evidence of presence in cells. Not a replacement for experimental validation.
 
+## references
+
+-  Leung, K. K., Schaefer, K., Lin, Z., Yao, Z. & Wells, J. A. Engineered Proteins and Chemical Tools to Probe the Cell Surface Proteome. *Chem. Rev.* 125,       4069–4110 (2025).  <https://doi.org/10.1021/acs.chemrev.4c00554>
+- Jumper, J. et al. Highly accurate protein structure prediction with AlphaFold. *Nature* 596, 583–589 (2021).
+- Evans, R. et al. Protein complex prediction with AlphaFold-Multimer. *bioRxiv* (2021).
+- Mirdita, M. et al. ColabFold: making protein structure prediction accessible to all. *Nature Methods* 19, 679–682 (2022).
+- Steinegger, M. & Söding, J. MMseqs2 enables sensitive protein sequence searching. *Nature Biotechnology* 35, 1026–1028 (2017).
+- The UniProt Consortium. UniProt: the Universal Protein Knowledgebase in 2023. *Nucleic Acids Research* 51, D523–D531 (2023).
 
 
 
