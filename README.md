@@ -86,7 +86,7 @@ Everything runs in the browser on a free Colab GPU. You never touch a terminal.
 
 ## references
 
--  Leung, K. K., Schaefer, K., Lin, Z., Yao, Z. & Wells, J. A. Engineered Proteins and Chemical Tools to Probe the Cell Surface Proteome. *Chem. Rev.* 125,       4069–4110 (2025).  <https://doi.org/10.1021/acs.chemrev.4c00554>
+-  Leung, K. K., Schaefer, K., Lin, Z., Yao, Z. & Wells, J. A. Engineered Proteins and Chemical Tools to Probe the Cell Surface Proteome. *Chem. Rev.* 125,       4069–4110 (2025).
 - Jumper, J. et al. Highly accurate protein structure prediction with AlphaFold. *Nature* 596, 583–589 (2021).
 - Evans, R. et al. Protein complex prediction with AlphaFold-Multimer. *bioRxiv* (2021).
 - Mirdita, M. et al. ColabFold: making protein structure prediction accessible to all. *Nature Methods* 19, 679–682 (2022).
