@@ -81,6 +81,32 @@ Everything runs in the browser on a free Colab GPU. You never touch a terminal.
 > **NOTE:** Test just a few protein candidates at a time. Folding takes a few minutes per pair, and free Colab disconnects
 > after a few hours. Consider using Colab Pro or a local GPU for a large list.
 
+If you'd rather run it in a terminal instead of Colab (e.g., you have a local GPU or want to script it), the core stages (`fetch-sequences`,
+`prep-msa`, `rank`) use only the Python standard library — nothing to `pip install`.
+
+``` bash
+git clone https://github.com/USERNAME/interactor.git
+cd interactor
+chmod +x run.sh
+
+./run.sh fetch-sequences --candidates sample_data/cd70_candidates.csv --bait CD70
+./run.sh prep-msa
+./run.sh fold      # packages a ColabFold job; add --local to fold with colabfold_batch
+./run.sh rank      # -> work/ranked_report.csv
+```
+
+The `fold` stage is the only GPU-bound step. By default, it packages `work/fold_job.zip` for the free ColabFold notebook; with `--local` it
+runs `colabfold_batch` if you've installed it (`pip install "colabfold[alphafold]"`) and have a CUDA GPU.
+
+See the ranking immediately, without folding anything, on precomputed
+scores:
+
+``` bash
+./run.sh rank --from-scores sample_data/sample_scores.csv
+```
+
+</details>
+
 ## limitations
  This tool assumes an already finalized list; therefore, it does not statistically filter raw spectral counts. It does not provide proof of interaction. For example, high ipTM scores indicate plausibility but not evidence of presence in cells. Not a replacement for experimental validation.
 
