@@ -110,6 +110,8 @@ scores:
 ## limitations
  This tool assumes an already finalized list; therefore, it does not statistically filter raw spectral counts. It does not provide proof of interaction. For example, high ipTM scores indicate plausibility but not evidence of presence in cells. Not a replacement for experimental validation.
 
+This tool was developed with Claude Code; the tool design, analysis workflows, and statistical logic are my own.
+
 ## references
 
 -  Leung, K. K., Schaefer, K., Lin, Z., Yao, Z. & Wells, J. A. Engineered Proteins and Chemical Tools to Probe the Cell Surface Proteome. *Chem. Rev.* 125,       4069–4110 (2025).
